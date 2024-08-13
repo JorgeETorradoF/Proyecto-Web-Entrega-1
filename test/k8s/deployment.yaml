@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: test
-  namespace: thymeleaf
+  namespace: proyecto-web
 spec:
   selector:
     matchLabels:
@@ -17,7 +17,7 @@ spec:
         - name: github-secret
       containers:
         - name: test
-          image: localhost:5000/test:latest
+          image: localhost:5000/proyecto_e1:latest
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres-service:5432/postgres
@@ -32,7 +32,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: test
-  namespace: thymeleaf
+  namespace: proyecto-web
 spec:
   type: ClusterIP
   selector:

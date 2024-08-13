@@ -1,4 +1,4 @@
-package com.example.tallerthymeleaf.thymeleaf.prueba.controllers;
+package com.example.ProyectoWeb.entrega1.prueba.controllers;
 
 
 import org.springframework.stereotype.Controller;
@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/taller-thymeleaf")
 public class TallerThymeleaf {
-
-
-	/*@Autowired
-	private PipolRepositroy pipolRepositroy;*/
 
 	 @GetMapping("/arquiProyecto")
      public String arquitecturaProyecto() {
