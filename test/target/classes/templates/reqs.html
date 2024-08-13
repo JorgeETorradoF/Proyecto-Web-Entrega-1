@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requisitos</title>
+    <link rel="stylesheet" th:href="@{/css/reqs.css}">
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="Logo del WikiGroup">
+                <h1 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido -->
+    <div class="requerimientos">
+        <div class="funcionales">
+            <h2>Requisitos Funcionales:</h2>
+            <ul>
+                <li>El sistema debe permitir a los usuarios <strong>buscar</strong> propiedades para poder solicitar el arriendo en fechas específicas.</li>
+                <li>El sistema debe permitir a los usuarios <strong>activar</strong> sus cuentas para que puedan acceder a las herramientas y recursos necesarios para realizar las actividades del sistema.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>crear</strong> una cuenta en el sistema para manejar propiedades, de manera que puedan acceder a las herramientas y recursos necesarios para realizar las actividades del sistema.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>cancelar</strong> la solicitud de arriendo.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>aceptar</strong> la solicitud de arriendo.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>ver</strong> las solicitudes de arriendo para aceptarlas o rechazarlas.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>desactivar</strong> propiedades para que no les arrienden propiedades que ya no tienen en su disposición.</li>  
+                <li>El sistema debe permitir a los usuarios <strong>autenticarse</strong> en el sistema para realizar el paso previo para pagar el posible arriendo.</li>
+                <li>El sistema debe permitir a los usuarios <strong>autenticarse</strong> en el sistema para verificar sus solicitudes de arriendo.</li>
+                <li>El sistema debe permitir a los usuarios <strong>editar</strong> sus propiedades para poder arrendarlas y actualizarlas.</li>     
+                <li>El sistema debe permitir a los usuarios <strong>autenticarse</strong> en el sistema para pagar los arriendos.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>calificar</strong> a los arrendatarios para poder verificar y mostrar qué tan buenos son los arrendatarios.</li>
+                <li>El sistema debe permitir a los usuarios <strong>crear</strong> propiedades para poder arrendarlas.</li> 
+                <li>El sistema debe permitir a los usuarios <strong>ver</strong> las propiedades que tienen a su cargo para poder realizar las acciones que el sistema permite.</li>
+            </ul>
+        </div>
+        <div class="nofuncionales"> 
+            <h2>Requisitos No Funcionales:</h2>
+            <ul>
+                <li>El sistema debe <strong>permitir</strong> a los usuarios autenticarse en el sistema para poder acceder de forma segura a sus cuentas.</li> 
+                <li>El sistema debe <strong>permitir</strong> a los usuarios subir fotos de las propiedades para poder mostrar las propiedades de mejor forma.</li>  
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>
+    </footer>
+
+    <script th:src="@{/js/menuPrincipal.js}"></script>
+</body>
+</html>

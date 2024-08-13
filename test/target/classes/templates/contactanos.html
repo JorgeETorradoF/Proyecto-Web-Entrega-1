@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" th:href="@{/css/contactanos.css}">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="Logo del WikiGroup">
+                <h1 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contactanos -->
+    <div class="contactanos">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos llenando el siguiente formulario:</p>
+            <form id="contactForm" method="post" novalidate>
+                <div class="form-group">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" maxlength="100" required>
+                    <div class="invalid-feedback">Campo obligatorio, máximo 100 caracteres.</div>
+                    <p id="nombresCount">0/100</p>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" maxlength="100" required>
+                    <div class="invalid-feedback">Campo obligatorio, máximo 100 caracteres.</div>
+                    <p id="apellidosCount">0/100</p>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" maxlength="100" required>
+                    <div class="invalid-feedback">Campo obligatorio, debe contener '@' y un punto después, sin espacios ni caracteres especiales, todo en mayúsculas.</div>
+                    <p id="correoCount">0/100</p>
+                </div>
+                <div class="form-group">
+                    <label for="semestre">Semestre:</label>
+                    <input type="number" id="semestre" name="semestre" min="0" max="16" required>
+                    <div class="invalid-feedback">Debe ser un número entre 0 y 16.</div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" maxlength="500" required></textarea>
+                    <div class="invalid-feedback">Campo obligatorio.</div>
+                    <p id="descripcionCount">0/500</p>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+                <div id="formErrors" class="form-errors"></div>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>  
+    </footer>        
+    <script th:src="@{/js/contactanos.js}"></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas</title>
+    <link rel="stylesheet" th:href="@{/css/pruebas.css}">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="Logo del WikiGroup">
+                <h1 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Pruebas -->
+    <div class="pruebas">
+        <h2>Caso de Prueba</h2>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <td>TC001</td>
+                <th>Author</th>
+                <td>GRUPO4</td>
+            </tr>
+            <tr>
+                <th>Date created</th>
+                <td>3/08/2024</td>
+                <th>Title</th>
+                <td>Registro de Usuario (Frontend)</td>
+            </tr>
+            <tr>
+                <th>Tester</th>
+                <td></td>
+                <th>Date tested</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="4">Description: Verificar que el formulario de registro de usuario en el frontend funcione correctamente</th>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td colspan="3">Funcional</td>
+            </tr>
+            <tr>
+                <th>Preconditions</th>
+                <td colspan="3">El usuario no debe estar registrado previamente en el sistema</td>
+            </tr>
+        </table>
+        <h3>Expected results table:</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Test</th>
+                    <th>Steps</th>
+                    <th>Data</th>
+                    <th>Expected Result</th>
+                    <th>Actual Result</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ir a la página de registro</td>
+                    <td>N/A</td>
+                    <td>La página de registro se muestra correctamente</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ingresar datos válidos en el formulario de registro</td>
+                    <td>“Juan”, “Perez”, juan.perez@example.com, “555123”, “password123”, “arrendador”</td>
+                    <td>Los datos son aceptados sin errores</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Hacer clic en “Registrar”</td>
+                    <td>N/A</td>
+                    <td>El usuario es registrado y redirigido a la página de inicio</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Caso de Prueba</h2>
+        <table border="1">
+            <tr>
+                <th>Id</th>
+                <td>TC002</td>
+                <th>Author</th>
+                <td>GRUPO4</td>
+            </tr>
+            <tr>
+                <th>Date created</th>
+                <td>3/08/2024</td>
+                <th>Title</th>
+                <td>Inicio de Sesión (Frontend)</td>
+            </tr>
+            <tr>
+                <th>Tester</th>
+                <td></td>
+                <th>Date tested</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th colspan="4">Description: Verificar que el formulario de inicio de sesión en el frontend funcione correctamente</th>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td colspan="3">Funcional</td>
+            </tr>
+            <tr>
+                <th>Preconditions</th>
+                <td colspan="3">El usuario debe estar registrado previamente en el sistema y su cuenta debe estar activada</td>
+            </tr>
+        </table>
+        <h3>Expected results table:</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Test</th>
+                    <th>Steps</th>
+                    <th>Data</th>
+                    <th>Expected Result</th>
+                    <th>Actual Result</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ir a la página de inicio de sesión</td>
+                    <td>N/A</td>
+                    <td>La página de inicio de sesión se muestra correctamente</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ingresar correo y contraseña válidos</td>
+                    <td>juan.perez@example.com, “password123”</td>
+                    <td>Los datos son aceptados sin errores</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Hacer click en "iniciar sesi&oacuten"</td>
+                    <td>N/A</td>
+                    <td>El usuario inicia sesión y es redirigido a su p&aacutegina principal</td>
+                    <td>Prueba pendiente de realizar</td>
+                    <td>Passed/Failed</td>
+                </tr>
+                <h3>Expected results table:</h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Steps</th>
+                            <th>Data</th>
+                            <th>Expected Result</th>
+                            <th>Actual Result</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ir a la página de inicio de sesión</td>
+                            <td>N/A</td>
+                            <td>La página de inicio de sesión se muestra correctamente</td>
+                            <td>Prueba pendiente de realizar</td>
+                            <td>Passed/Failed</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ingresar correo y contraseña válidos</td>
+                            <td>juan.perez@example.com, “password123”</td>
+                            <td>Los datos son aceptados sin errores</td>
+                            <td>Prueba pendiente de realizar</td>
+                            <td>Passed/Failed</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+        
+                <h2>Caso de Prueba</h2>
+                <table border="1">
+                    <tr>
+                        <th>Id</th>
+                        <td>TC003</td>
+                        <th>Author</th>
+                        <td>GRUPO4</td>
+                    </tr>
+                    <tr>
+                        <th>Date created</th>
+                        <td>3/08/2024</td>
+                        <th>Title</th>
+                        <td>Publicación de Propiedad (Backend)</td>
+                    </tr>
+                    <tr>
+                        <th>Tester</th>
+                        <td></td>
+                        <th>Date tested</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">Description: Verificar que el programa y la base de datos procese correctamente la publicación de una nueva propiedad</th>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td colspan="3">Funcional</td>
+                    </tr>
+                    <tr>
+                        <th>Preconditions</th>
+                        <td colspan="3">El usuario debe haber iniciado sesión como arrendador</td>
+                    </tr>
+                </table>
+                <h3>Expected results table:</h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Steps</th>
+                            <th>Data</th>
+                            <th>Expected Result</th>
+                            <th>Actual Result</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Enviar solicitud de publicación de propiedad al endpoint correspondiente</td>
+                            <td>“Finca los panas”, “Cundinamarca”, “Bogotá”, “Diario”, “Hermosa finca con hermosa vista...”, “3 habitaciones”, “2 baños”, tiene piscina, tiene asador”, “permite mascotas”, “800.000”</td>
+                            <td>El backend responde con éxito y la propiedad es almacenada en la base de datos</td>
+                            <td>Prueba pendiente de realizar</td>
+                            <td>Passed/Failed</td>
+                            <td></td>
+                        </tr>    
+            </tbody>
+        </table>
+
+        <h2>Caso de Prueba</h2>
+                <table border="1">
+                    <tr>
+                        <th>Id</th>
+                        <td>TC004</td>
+                        <th>Author</th>
+                        <td>GRUPO4</td>
+                    </tr>
+                    <tr>
+                        <th>Date created</th>
+                        <td>3/08/2024</td>
+                        <th>Title</th>
+                        <td>Solicitud de arriendo (Backend)</td>
+                    </tr>
+                    <tr>
+                        <th>Tester</th>
+                        <td></td>
+                        <th>Date tested</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">Description: Verificar que el backend procese correctamente la solicitud de arriendo de una propiedad</th>
+                    </tr>
+                    <tr>
+                        <th>Type</th>
+                        <td colspan="3">Funcional</td>
+                    </tr>
+                    <tr>
+                        <th>Preconditions</th>
+                        <td colspan="3">La propiedad debe estar disponible y el usuario debe haber iniciado sesión como arrendatario</td>
+                    </tr>
+                </table>
+                <h3>Expected results table:</h3>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Test</th>
+                            <th>Steps</th>
+                            <th>Data</th>
+                            <th>Expected Result</th>
+                            <th>Actual Result</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Enviar solicitud de publicación de propiedad al endpoint correspondiente</td>
+                            <td>Llegada: “2023-09-01”, Salida: “2023-09-05”</td>
+                            <td>El backend responde con éxito y la solicitud es almacenada en la base de datos</td>
+                            <td>Prueba pendiente de realizar</td>
+                            <td>Passed/Failed</td>
+                            <td></td>
+                        </tr>    
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>
+    </footer>
+
+    <script th:src="@{/js/menuPrincipal.js}"></script>
+</body>
+</html>

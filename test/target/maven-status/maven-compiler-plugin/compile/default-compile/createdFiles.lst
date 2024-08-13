@@ -1,0 +1,6 @@
+com\example\tallerthymeleaf\thymeleaf\test\TestApplication.class
+com\example\tallerthymeleaf\thymeleaf\prueba\controllers\RedirigirAlPrincipal.class
+com\example\tallerthymeleaf\thymeleaf\model\Formulario.class
+com\example\tallerthymeleaf\thymeleaf\prueba\controllers\TallerThymeleaf.class
+com\example\tallerthymeleaf\thymeleaf\prueba\controllers\ControladorFormulario.class
+com\example\tallerthymeleaf\thymeleaf\repository\RepositorioFormulario.class

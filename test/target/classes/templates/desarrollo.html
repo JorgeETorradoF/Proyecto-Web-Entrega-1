@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/desarrollo.css}">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="Logo del WikiGroup">
+                <h1 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Desarrollo -->
+    <div class="desarrollo">
+        <h1>ALBION ONLINE</h1>
+        <p>Albion Online es un MMORPG no lineal en el que escribes tu propia historia sin limitarte a seguir un camino prefijado. Explora un amplio mundo abierto con cinco biomas únicos. Todo cuanto hagas tendrá su repercusión en el mundo. Con su economía orientada al jugador, los jugadores crean prácticamente todo el equipo a partir de los recursos que consiguen. El equipo que llevas define quién eres; cambia de arma y armadura para pasar de caballero a mago o juega como una mezcla de ambas clases. Aventúrate en el mundo abierto y haz frente a los habitantes y criaturas de Albion. Inicia expediciones o adéntrate en mazmorras donde encontrarás enemigos aún más difíciles. Enfréntate a otros jugadores en encuentros en el mundo abierto, lucha por territorios o por ciudades enteras en batallas tácticas. Relájate en tu isla privada donde podrás construir un hogar, cultivar cosechas, criar animales y unirte a un gremio. Todo es mejor cuando se trabaja en grupo [música]. Adéntrate ya en el mundo de Albion y escribe tu propia historia.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>
+    </footer>
+
+    <script th:src="@{/js/menuPrincipal.js}"></script>
+</body>
+</html>

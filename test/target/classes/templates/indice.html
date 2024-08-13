@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Página Principal</title>
+    <link rel="stylesheet" th:href="@{/css/indice.css}">
+</head>
+<body>
+    <header id="menu">
+        <div class="logo">
+            <img th:src="@{/assets/icons/wiki-logo.png}" alt="logo del WikiGroup">
+            <h2 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h2>
+        </div>
+        <nav>
+            <a th:href="@{/taller-thymeleaf/equipo}">Presentación</a>
+            <a th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a>
+            <a th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a>
+            <a th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a>
+            <a th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a>
+            <a th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a>
+            <a th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a>
+            <a th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a>
+        </nav>
+    </header>
+</body>
+</html>

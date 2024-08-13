@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitectura Del Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/arquiProyecto.css}">
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="logo del WikiGroup">
+                <h1 class="logo-nombre"><a href="#" th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Arquitectura -->
+    <div class="arquitectura">
+        <div class="diagram">
+            <h1>Diagrama de Entidad Relación</h1>
+                <img th:src="@{/assets/diagrams/DiagramaEntiRelacion.png}" alt="Diagrama de Entidad Relación">
+        </div>
+
+        <div class="diagram">
+            <h1>Diagrama de Componentes</h1>
+                <img th:src="@{/assets/diagrams/DiagramaComponentes.png}" alt="Diagrama de Componentes">
+        </div>
+
+        <div class="diagram">
+            <h1>Diagrama de Despliegue</h1>
+                <img th:src="@{/assets/diagrams/DiagramaDespliegue.png}" alt="Diagrama de Despliegue">
+        </div>
+
+        <div class="diagram">
+            <h1>Diagrama C4</h1>
+                <img th:src="@{/assets/diagrams/DiagramaC4.png}" alt="Diagrama de Componentes C4">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>
+    </footer>
+
+    <script th:src="@{/js/menuPrincipal.js}"></script>
+</body>
+</html>

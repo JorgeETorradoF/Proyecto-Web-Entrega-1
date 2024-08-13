@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción del Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/descriProyecto.css}">
+</head>
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img th:src="@{/assets/icons/wiki-logo.png}" class="wiki" alt="Logo del WikiGroup">
+                <h1 class="logo-nombre"><a th:href="@{/taller-thymeleaf/equipo}">WikiGroup</a></h1>
+            </div>
+            <ul>
+                <li><a href="#" th:href="@{/taller-thymeleaf/equipo}">Presentación</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/descriProyecto}">Descripción</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/reqs}">Requerimientos</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/arquiProyecto}">Arquitectura</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/desarrollo}">Desarrollo</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/pruebas}">Pruebas</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/despliegue}">Despliegue</a></li>
+                    <li><a href="#" th:href="@{/taller-thymeleaf/contactanos}">Contáctanos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Descripción -->
+    <div class="descripcion">
+        <div class="container">
+            <h1>Descripción del Proyecto: <br> Plataforma de Gestión de Arrendamientos</h1>
+
+            <h2>Objetivo del Proyecto</h2>
+            <p>Desarrollar una aplicación que facilite la interacción y gestión de propiedades entre dos perfiles de usuarios principales: el “Usuario Arrendatario” y el “Usuario Arrendador”.</p>
+            
+            <h2>Perfiles de Usuarios</h2>
+
+            <div class="perfiles">
+                <!-- Usuario Arrendatario -->
+                <div class="usuario usuario1">
+                    <h3>1. Usuario Arrendatario</h3>
+                    <div class="funciones">
+                        <h4>Funciones Principales:</h4>
+                        <p>
+                            Crear, editar, eliminar y actualizar propiedades disponibles para arrendamiento.<br>
+                            Revisar y responder a las solicitudes de arrendamiento recibidas.<br>
+                            Aceptar o cancelar solicitudes de arrendamiento.<br>
+                            Verificar los pagos realizados por los arrendadores.<br>
+                            Proporcionar calificaciones y comentarios sobre la experiencia de arrendamiento.
+                        </p>
+                    </div>
+                    <div class="trabajo">
+                        <h4>Flujo de Trabajo:</h4>
+                        <p>
+                            Gestión activa de las propiedades disponibles.<br>
+                            Revisión y respuesta a las solicitudes de arrendamiento.<br>
+                            Seguimiento de los pagos realizados.<br>
+                            Provisión de retroalimentación sobre las experiencias de arrendamiento.
+                        </p>
+                    </div>
+                </div>
+            
+                <!-- Usuario Arrendador -->
+                <div class="usuario usuario2">
+                    <h3>2. Usuario Arrendador</h3>
+                    <div class="funciones">
+                        <h4>Funciones Principales:</h4>
+                        <p>
+                            Buscar fincas disponibles filtradas por ubicación geográfica.<br>
+                            Solicitar el arrendamiento de una finca específica.<br>
+                            Realizar el pago correspondiente del arriendo una vez aprobada la solicitud.<br>
+                            Calificar la finca arrendada y al arrendatario.
+                        </p>
+                    </div>
+                    <div class="trabajo">
+                        <h4>Flujo de Trabajo:</h4>
+                        <p>
+                            Búsqueda y arrendamiento de propiedades.<br>
+                            Gestión de los pagos.<br>
+                            Calificación de la experiencia general.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h2>Resumen del Proyecto</h2>
+            <p>El desarrollo de esta aplicación requiere una planificación detallada y un enfoque centrado en el usuario para garantizar una experiencia fluida y satisfactoria. La plataforma permitirá a los usuarios arrendatarios gestionar activamente sus propiedades y a los usuarios arrendadores encontrar y arrendar fincas de manera eficiente. La implementación exitosa demandará una cuidadosa consideración de las necesidades y expectativas de ambos tipos de usuarios, asegurando una integración armoniosa de las funcionalidades descritas.</p>
+        </div>
+    </div>
+     
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h6>WikiGroup 2024</h6>
+            <img th:src="@{/assets/icons/copyright.png}" alt="Copyright">
+        </div>
+    </footer>
+
+    <script th:src="@{/js/menuPrincipal.js}"></script>
+</body>
+</html>
