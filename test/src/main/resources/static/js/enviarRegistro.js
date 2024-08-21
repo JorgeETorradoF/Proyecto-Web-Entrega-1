@@ -42,14 +42,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     body: JSON.stringify(datos)
                 });
-        
+
+                // Verificar si la respuesta es exitosa
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Usuario registrado:', data);
                     alert('Usuario registrado exitosamente.');
                 } else {
-                    const errorData = await response.json(); // Esperamos un JSON incluso en caso de error
-                    alert('Error: ' + errorData.error); // Mostrar el mensaje de error desde el JSON
+                    // Manejar errores
+                    let errorMessage = 'Error desconocido'; // Mensaje por defecto
+                    try {
+                        const errorData = await response.json();
+                        errorMessage = errorData.error || 'Error desconocido';
+                    } catch (e) {
+                        // Si la respuesta no es JSON, usar texto plano
+                        errorMessage = await response.text();
+                    }
+                    console.error('Server error response:', errorMessage);
+                    alert('Error: ' + errorMessage);
                 }
             } catch (error) {
                 console.error('Error al registrar el usuario:', error.message);
