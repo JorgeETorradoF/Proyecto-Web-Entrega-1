@@ -12,6 +12,11 @@ public class ErrorController {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(CamposInvalidosException.class)
+    public ResponseEntity<String> handleCamposInvalidosException(CamposInvalidosException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGeneralException(Exception ex) {
         return new ResponseEntity<>("Error interno del servidor. Por favor, inténtelo más tarde.", HttpStatus.INTERNAL_SERVER_ERROR);

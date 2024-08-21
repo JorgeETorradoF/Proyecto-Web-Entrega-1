@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.example.ProyectoWeb.entrega1.service.ServicioRegistro;
 import com.example.ProyectoWeb.entrega1.dto.RegistroDTO;
+import com.example.ProyectoWeb.entrega1.exception.CamposInvalidosException;
 import com.example.ProyectoWeb.entrega1.exception.CorreoRegistradoException;
 import com.example.ProyectoWeb.entrega1.model.Usuario;
 
@@ -31,6 +32,13 @@ public class ControladorRegistro {
             Map<String, String> errorResponse = new HashMap<>();
             errorResponse.put("error", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+        } catch(CamposInvalidosException e)
+        {
+            // Crear un objeto JSON para el mensaje de error
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+
         } catch (Exception e) {
             // Crear un objeto JSON para un error genérico
             Map<String, String> errorResponse = new HashMap<>();
