@@ -8,8 +8,8 @@ import lombok.Setter;
 @Setter
 public class RegistroDTO extends UsuarioRegistroDTO {
     private boolean arrendador;
-    public RegistroDTO(String nombre, String apellido, String correo, boolean arrendador) {
-        super(nombre, apellido, correo); 
+    public RegistroDTO(String nombre, String apellido, String correo, String contraseña, boolean arrendador) {
+        super(nombre, apellido, correo, contraseña); 
         this.arrendador = arrendador;
     }
 }

@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registroForm');
     
     form.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); // Previene la acción por defecto del formulario
 
-        // Get form values
+        // Obtén los valores del formulario
         const nombre = document.getElementById('nombre').value.trim();
         const apellido = document.getElementById('apellido').value.trim();
         const correo = document.getElementById('correo').value.trim();
         const contraseña = document.getElementById('contraseña').value.trim();
         const isArrendador = document.getElementById('arrendador').checked;
 
-        // Regular expression for email validation
+        // Expresión regular para validación del correo
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Validation
+        // Validación
         if (!nombre || nombre.length > 100) {
             alert('Nombre es requerido y no debe exceder los 100 caracteres.');
             return;
@@ -32,7 +32,32 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Data to be sent
+        // Función para registrar usuario
+        async function registrarUsuario(datos) {
+            try {
+                const response = await fetch('/crear-cuenta', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(datos)
+                });
+        
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Usuario registrado:', data);
+                    alert('Usuario registrado exitosamente.');
+                } else {
+                    const errorData = await response.json(); // Esperamos un JSON incluso en caso de error
+                    alert('Error: ' + errorData.error); // Mostrar el mensaje de error desde el JSON
+                }
+            } catch (error) {
+                console.error('Error al registrar el usuario:', error.message);
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        // Datos que serán enviados
         const formData = {
             nombre: nombre,
             apellido: apellido,
@@ -41,24 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
             arrendador: isArrendador
         };
 
-        try {
-            const response = await fetch('/crear-cuenta', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (response.ok) {
-                alert('Registro exitoso!');
-                form.reset(); // Optionally reset the form
-            } else {
-                alert('Hubo un problema con el registro. Por favor, inténtelo de nuevo.');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Error al enviar los datos. Por favor, inténtelo de nuevo.');
-        }
+        registrarUsuario(formData);
     });
 });
