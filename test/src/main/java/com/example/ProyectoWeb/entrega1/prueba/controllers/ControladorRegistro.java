@@ -25,13 +25,17 @@ public class ControladorRegistro {
     @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> registrarUsuario(@RequestBody RegistroDTO registroDTO) {
         try {
+
             Usuario usuario = servicioRegistro.registerUser(registroDTO);
             return ResponseEntity.ok(usuario);
+
         } catch (CorreoRegistradoException e) {
+
             // Crear un objeto JSON para el mensaje de error
             Map<String, String> errorResponse = new HashMap<>();
             errorResponse.put("error", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+            
         } catch(CamposInvalidosException e)
         {
             // Crear un objeto JSON para el mensaje de error

@@ -12,4 +12,6 @@ public class UsuarioRegistroDTO {
     private String apellido;
     private String correo;
     private String contraseña;
+    private float promedio;
+    private int cantiCalif;
 }

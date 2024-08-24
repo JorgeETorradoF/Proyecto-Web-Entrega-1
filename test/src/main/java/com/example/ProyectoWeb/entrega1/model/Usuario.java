@@ -27,5 +27,7 @@ public class Usuario implements Serializable {
     private String apellido;
     private String contraseña;
     private String correo;
+    private float promedio;
+    private int cantiCalif;
 }
 

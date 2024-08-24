@@ -63,7 +63,9 @@ public class ServicioRegistro {
             registroDTO.getNombre(), 
             registroDTO.getApellido(), 
             registroDTO.getCorreo(),
-            registroDTO.getContraseña()
+            registroDTO.getContraseña(),
+            registroDTO.getPromedio(),
+            registroDTO.getCantiCalif()
             );
 
             //revisamos que el correo no haya sido ya registrado
