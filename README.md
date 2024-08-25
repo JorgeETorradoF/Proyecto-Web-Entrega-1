@@ -4,7 +4,7 @@ Se debe tener Docker y Kubernetes (k8s) instalados.
 
 Luego, se debe desplegar el Nginx Ingress Controller en k8s con el siguiente comando:
  ```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml -n ingress-nginx
  ```
 
 Una vez se haya desplegado y tenga una IP externa (en algunos casos será localhost como por ejemplo en docker desktop), se puede continuar:
