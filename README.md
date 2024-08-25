@@ -55,8 +55,17 @@ Deberían aparecerle 2 pods con estado `Running` y replicas `1/1`, en cuyo caso 
    kubectl get svc -n ingress-nginx
    ```
     
-## Posdata: 
-si realiza cambios, para poder desplegar y probar cambios de base de datos debe repetir los pasos 2 (solo la 2da parte de este paso) y 3, si quiere desplegar y probar cambios de backend/frontend repita pasos 2 (solo la 2da parte de este paso) y 5 y si requiere desplegar y probar todo (backend/frontend y base de datos) repita los pasos 2 (solo la 2da parte de este paso) 3 y 5, luego de haber repetido los pasos respectivos, ejecute el comando:
+## En caso de que realice algún cambio y quiera probarlo: 
+- **Para desplegar y probar cambios en la base de datos:**
+  - Repita los pasos 2 (solo la segunda parte de este paso) y 3.
+
+- **Para desplegar y probar cambios en el backend/frontend:**
+  - Repita los pasos 2 (solo la segunda parte de este paso) y 5.
+
+- **Para desplegar y probar todo (backend/frontend y base de datos):**
+  - Repita los pasos 2 (solo la segunda parte de este paso), 3, y 5.
+
+Luego de haber repetido los pasos respectivos, ejecute el comando:
    ```bash
     kubectl delete pods --all -n proyecto-web
    ```
