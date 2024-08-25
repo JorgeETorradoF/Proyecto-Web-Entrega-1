@@ -77,7 +77,7 @@ esto reiniciará los pods para que hagan pull a la nueva imagen que usted builde
   ```bash
     kubectl get pods -n proyecto-web
    ```
-- **Si algun pod no tiene en estado el  `Running` puede ver información de lo que salió mal con el comando:
+- **Si algun pod no tiene en estado el  `Running` puede ver información de lo que salió mal con el comando:**
   ```bash
     kubectl logs -n proyecto-web <nombre del pod (se puede mirar con el comando get pods del punto anterior)>
    ```
