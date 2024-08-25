@@ -65,7 +65,7 @@ Deberían aparecerle 2 pods con estado `Running` y replicas `1/1`, en cuyo caso 
 - **Para desplegar y probar todo (backend/frontend y base de datos):**
   - Repita los pasos 2 (solo la segunda parte de este paso), 3, y 5.
 
-Luego de haber repetido los pasos respectivos, ejecute el comando:
+## Y por último, ejecute el comando:
    ```bash
     kubectl delete pods --all -n proyecto-web
    ```
