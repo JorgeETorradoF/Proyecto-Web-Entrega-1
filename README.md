@@ -81,4 +81,8 @@ esto reiniciará los pods para que hagan pull a la nueva imagen que usted builde
   ```bash
     kubectl logs -n proyecto-web <nombre del pod (se puede mirar con el comando get pods del punto anterior)>
    ```
+- **Si requiere acceder directamente al postgre:**
+  ```bash
+    kubectl exec -it -n proyecto-web <nombre del pod que tiene el postgres (se puede mirar con el comando get pods del primer punto de debugging)> -- /bin/bash
+   ```
 
