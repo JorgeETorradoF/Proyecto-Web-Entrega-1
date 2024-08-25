@@ -71,3 +71,14 @@ Deberían aparecerle 2 pods con estado `Running` y replicas `1/1`, en cuyo caso 
    ```
     
 esto reiniciará los pods para que hagan pull a la nueva imagen que usted buildeó y pusheó en el paso de la posdata. Luego espere unos segundos o unos minutos y pruebe de nuevo digitando la external ip del nginx-controller
+
+##debugging:
+- **Si requiere ver el estado de los pods:**
+  ```bash
+    kubectl get pods -n proyecto-web
+   ```
+- **Si algun pod no tiene en estado el  `Running` puede ver información de lo que salió mal con el comando:
+  ```bash
+    kubectl logs -n proyecto-web <nombre del pod (se puede mirar con el comando get pods del punto anterior)>
+   ```
+
