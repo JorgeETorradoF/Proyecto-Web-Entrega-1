@@ -33,6 +33,7 @@ Una vez se haya desplegado y tenga una IP externa (en algunos casos será localh
     ```bash
     buildAndPush.bat proyecto_e1
     ```
+    **posdata: si le aparece algún error al buildear, abra con visual studio el archivo mvnw y cambiele sus caracteres especiales de crlf a lf
 
 6. **Entre a la carpeta `k8s` dentro de la carpeta `tests` y aplique el deployment y el ingress:**
     ```bash
