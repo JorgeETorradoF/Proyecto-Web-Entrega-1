@@ -12,6 +12,6 @@ public interface RepositorioArrendatarios extends CrudRepository<Arrendatarios, 
     @Query("SELECT CASE WHEN COUNT(a) > 0 THEN true ELSE false END FROM Arrendatarios a WHERE a.correo = :correo")
     boolean existsByCorreo(@Param("correo") String correo);
 
-    @Query("SELECT * FROM Arrendatarios a WHERE a.correo = :correo")
+    @Query("SELECT a FROM Arrendatarios a WHERE a.correo = :correo")
     Arrendatarios findByCorreo(@Param("correo") String correo);
 }

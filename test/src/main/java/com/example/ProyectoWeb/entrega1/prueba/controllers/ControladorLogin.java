@@ -21,7 +21,7 @@ public class ControladorLogin {
         this.servicioLogin = servicioLogin;
     }
     
-    @GetMapping(consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> LoginUsuario(@RequestBody LoginDTO loginDTO) {
         try {
 

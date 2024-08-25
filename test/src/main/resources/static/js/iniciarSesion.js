@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Previene la acción por defecto del formulario
 
         // Se extraen los valores del formulario
-        const correo = document.getElementById('correo').value.trim();
-        const contraseña = document.getElementById('contraseña').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
         // Función para registrar usuario
         async function loginUsuario(datos) {
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Datos que serán enviados
         const formData = {
-            correo: correo,
-            contraseña: contraseña
+            email: email,
+            password: password
         };
 
         loginUsuario(formData);
