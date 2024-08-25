@@ -38,10 +38,10 @@ public class ControladorArrendador {
     }
 
     @PostMapping(value = "/registrar-propiedad", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<?> registrarPropiedad(@PathVariable("id") Long id, @RequestBody PropiedadDTO propiedadDTO) {
+    public ResponseEntity<?> registrarPropiedad(@PathVariable("id") int id, @RequestBody PropiedadDTO propiedadDTO) {
         try {
             // se guarda
-            servicioPropiedad.savePropiedad(propiedadDTO);
+            servicioPropiedad.savePropiedad(propiedadDTO, id);
 
             return ResponseEntity.status(HttpStatus.CREATED).body("Propiedad registrada exitosamente.");
         } catch (Exception e) {

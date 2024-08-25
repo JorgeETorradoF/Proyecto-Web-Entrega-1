@@ -18,7 +18,7 @@ CREATE TABLE public.arrendatarios (
 );
 CREATE TABLE public.propiedades (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    id_arrendatario INTEGER REFERENCES public.arrendadores(id),
+    id_arrendador INTEGER REFERENCES public.arrendadores(id),
     nombre_propiedad VARCHAR(100) NOT NULL,
     departamento VARCHAR(100) NOT NULL,
     municipio VARCHAR(100) NOT NULL,
