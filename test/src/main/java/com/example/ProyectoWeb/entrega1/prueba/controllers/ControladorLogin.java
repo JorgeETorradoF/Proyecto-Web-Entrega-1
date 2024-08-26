@@ -21,10 +21,10 @@ public class ControladorLogin {
         this.servicioLogin = servicioLogin;
     }
     
-    @PostMapping(consumes = "application/json", produces = "application/json")
-    public ResponseEntity<?> LoginUsuario(@RequestBody LoginDTO loginDTO) {
+    @GetMapping(produces = "application/json")
+    public ResponseEntity<?> LoginUsuario(@RequestParam String email, @RequestParam String password) {
+        LoginDTO loginDTO = new LoginDTO(email, password);
         try {
-
             RespuestaLoginDTO login  = servicioLogin.loginUser(loginDTO);
             String ruta = new String(); 
 
@@ -33,9 +33,7 @@ public class ControladorLogin {
             } else if (!login.isArrendador()) {
                 ruta = "/arrendatario/" + login.getId();
             }
-            return ResponseEntity.status(HttpStatus.FOUND)  
-                    .header("Location", ruta)
-                    .build();
+            return ResponseEntity.ok(ruta);
 
         } catch (CorreoNoExistenteException e) {
 
@@ -47,8 +45,9 @@ public class ControladorLogin {
         } catch (Exception e) {
             // Crear un objeto JSON para un error genérico
             Map<String, String> errorResponse = new HashMap<>();
-            errorResponse.put("error", "Hubo un problema con el registro. Por favor, inténtelo de nuevo más tarde.");
+            errorResponse.put("error", "Hubo un problema con el inicio de sesión. Por favor, inténtelo de nuevo más tarde.");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
         }
     }
+
 }

@@ -1,20 +1,16 @@
 package com.example.ProyectoWeb.entrega1.service;
 
 import com.example.ProyectoWeb.entrega1.dto.LoginDTO;
-import com.example.ProyectoWeb.entrega1.dto.RegistroDTO;
 import com.example.ProyectoWeb.entrega1.dto.RespuestaLoginDTO;
-import com.example.ProyectoWeb.entrega1.dto.UsuarioRegistroDTO;
 import com.example.ProyectoWeb.entrega1.exception.CorreoNoExistenteException;
 import com.example.ProyectoWeb.entrega1.model.Arrendadores;
 import com.example.ProyectoWeb.entrega1.model.Arrendatarios;
-import com.example.ProyectoWeb.entrega1.model.Usuario;
 import com.example.ProyectoWeb.entrega1.repository.RepositorioArrendadores;
 import com.example.ProyectoWeb.entrega1.repository.RepositorioArrendatarios;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,9 +22,6 @@ public class ServicioLogin {
 
     @Autowired
     private RepositorioArrendatarios repositorioArrendatarios;
-
-    @Autowired
-    private ModelMapper modelMapper;
 
     public boolean contraseñaValida(String contraseña)
     {
