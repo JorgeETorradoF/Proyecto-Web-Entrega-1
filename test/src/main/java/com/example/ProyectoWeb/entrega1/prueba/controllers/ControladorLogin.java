@@ -10,6 +10,7 @@ import com.example.ProyectoWeb.entrega1.exception.CorreoNoExistenteException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.net.URI;
 
 @RestController
 @RequestMapping("/iniciar-sesion")
@@ -21,8 +22,8 @@ public class ControladorLogin {
         this.servicioLogin = servicioLogin;
     }
     
-    @GetMapping(produces = "application/json")
-    public ResponseEntity<?> LoginUsuario(@RequestParam String email, @RequestParam String password) {
+    @GetMapping("/{email}/{password}")
+    public ResponseEntity<?> LoginUsuario(@PathVariable String email, @PathVariable String password) {
         LoginDTO loginDTO = new LoginDTO(email, password);
         try {
             RespuestaLoginDTO login  = servicioLogin.loginUser(loginDTO);
@@ -33,7 +34,8 @@ public class ControladorLogin {
             } else if (!login.isArrendador()) {
                 ruta = "/arrendatario/" + login.getId();
             }
-            return ResponseEntity.ok(ruta);
+            return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(ruta)).build();
+
 
         } catch (CorreoNoExistenteException e) {
 
