@@ -1,7 +1,7 @@
 package com.example.ProyectoWeb.entrega1.model;
 
 import java.io.Serializable;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 @MappedSuperclass
 @AllArgsConstructor
@@ -27,7 +26,10 @@ public class Usuario implements Serializable {
     private String apellido;
     private String contraseña;
     private String correo;
-    private float promedio;
-    private int cantiCalif;
-}
 
+    @Column(name = "promedio")
+    private Float promedio = 0.0f;
+
+    @Column(name = "canti_calif")
+    private Integer cantiCalif;
+}
