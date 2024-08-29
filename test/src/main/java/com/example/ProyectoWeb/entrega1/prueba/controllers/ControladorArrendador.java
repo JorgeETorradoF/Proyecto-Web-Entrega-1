@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -67,7 +68,19 @@ public class ControladorArrendador {
             return "error"; // Return an error view or handle it accordingly
         }
     }
-    
+
+    @PutMapping("/modificar-propiedad/{propId}")
+    public ResponseEntity<?> modificarPropiedad(@PathVariable("id") int id, @PathVariable("propId") int propId,Model model,@RequestBody PropiedadDTO propiedadDTO) {
+        model.addAttribute("id", id);
+        model.addAttribute("propId", propId);
+        propiedadDTO.setIdArrendador(id);
+        try {
+            // se guarda
+            return ResponseEntity.ok(servicioPropiedad.modifyPropiedad(propiedadDTO, propId));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al registrar la propiedad: " + e.getMessage());
+        }
+    }
 
 }
 

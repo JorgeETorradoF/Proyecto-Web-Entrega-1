@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ProyectoWeb.entrega1.dto.PropiedadDTO;
+import com.example.ProyectoWeb.entrega1.exception.PropNoEncontradaException;
 import com.example.ProyectoWeb.entrega1.exception.PropRegistradaException;
 import com.example.ProyectoWeb.entrega1.model.Propiedades;
 import com.example.ProyectoWeb.entrega1.repository.RepositorioPropiedades;
@@ -37,5 +38,21 @@ public class ServicioPropiedad {
     
     public Iterable<Propiedades> getPropiedades(int id){
         return repositorioPropiedades.getAllById(id);
+    }
+
+    
+    public Propiedades modifyPropiedad(PropiedadDTO propiedadDTO, int propId) throws PropNoEncontradaException{
+        boolean lePertenece = repositorioPropiedades.propiedadPertenece(propiedadDTO.getIdArrendador(), propId);
+        if(lePertenece)
+        {
+            Propiedades propRetorno = new Propiedades(propiedadDTO);
+            propRetorno.setId(propId);
+            return repositorioPropiedades.save(propRetorno);
+
+        }
+        else
+        {   
+            throw new PropNoEncontradaException("Error, no se encuentra la propiedad del usuario solicitada");
+        }
     }
 }

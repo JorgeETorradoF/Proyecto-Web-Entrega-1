@@ -14,4 +14,7 @@ public interface RepositorioPropiedades extends CrudRepository<Propiedades, Inte
     
     @Query("SELECT p FROM Propiedades p WHERE p.idArrendador = :id")
     Iterable<Propiedades> getAllById(@Param("id") int id);
+
+    @Query("SELECT CASE WHEN COUNT(p) > 0 THEN true ELSE false END FROM Propiedades p WHERE p.id = :idPropiedad AND p.idArrendador = :idUsuario")
+    boolean propiedadPertenece(@Param("idUsuario") int idUsuario,@Param("idPropiedad") int idPropiedad);
 }
