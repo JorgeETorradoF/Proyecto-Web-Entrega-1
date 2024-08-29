@@ -19,21 +19,6 @@ import jakarta.persistence.Id;
 @Setter
 @Getter
 public class Propiedades {
-    public Propiedades(PropiedadDTO propTemplate)
-    {
-        this.idArrendador = propTemplate.getIdArrendador();
-        this.nombrePropiedad = propTemplate.getNombrePropiedad();
-        this.departamento = propTemplate.getDepartamento();
-        this.municipio = propTemplate.getMunicipio();
-        this.tipoIngreso = propTemplate.getTipoIngreso();
-        this.descripcion = propTemplate.getDescripcion();
-        this.cantidadHabitaciones = propTemplate.getCantidadHabitaciones();
-        this.cantidadBaños = propTemplate.getCantidadBaños();
-        this.permiteMascotas = propTemplate.isPermiteMascotas();
-        this.tienePiscina = propTemplate.isTienePiscina();
-        this.tieneAsador= propTemplate.isTieneAsador();
-        this.valorNoche = propTemplate.getValorNoche();
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

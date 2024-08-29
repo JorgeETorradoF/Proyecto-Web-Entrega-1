@@ -50,6 +50,7 @@ public class ControladorArrendador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al registrar la propiedad: " + e.getMessage());
         }
     }
+
     @GetMapping("/propiedades")
     public String getAllProperties(@PathVariable("id") int id, Model model) {
         try {
@@ -78,7 +79,7 @@ public class ControladorArrendador {
             // se guarda
             return ResponseEntity.ok(servicioPropiedad.modifyPropiedad(propiedadDTO, propId));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al registrar la propiedad: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al modificar la propiedad: " + e.getMessage());
         }
     }
 
