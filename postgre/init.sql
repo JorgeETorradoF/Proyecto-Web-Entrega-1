@@ -4,18 +4,20 @@ CREATE TABLE public.arrendadores (
     apellido VARCHAR(100),
     correo VARCHAR(100),
     contraseña VARCHAR(100),
-    promedio NUMERIC(10,2),
-    canti_calif INTEGER
+    promedio NUMERIC(10,2) DEFAULT 0.0 NOT NULL,  
+    canti_calif INTEGER DEFAULT 0 NOT NULL       
 );
+
 CREATE TABLE public.arrendatarios (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     correo VARCHAR(100),
     contraseña VARCHAR(100),
-    promedio NUMERIC(10,2),
-    canti_calif INTEGER
+    promedio NUMERIC(10,2) DEFAULT 0.0 NOT NULL,  
+    canti_calif INTEGER DEFAULT 0 NOT NULL        
 );
+
 CREATE TABLE public.propiedades (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     id_arrendador INTEGER REFERENCES public.arrendadores(id),

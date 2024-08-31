@@ -1,6 +1,26 @@
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\model\Formulario.java
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\prueba\controllers\ControladorFormulario.java
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\prueba\controllers\RedirigirAlPrincipal.java
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\prueba\controllers\TallerThymeleaf.java
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\repository\RepositorioFormulario.java
-C:\Users\Jorge\Documents\desarrollo web\Taller Thymeleaf XD\test\src\main\java\com\example\tallerthymeleaf\thymeleaf\test\TestApplication.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\config\ModelMapperConfig.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\PropiedadDTO.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\RegistroDTO.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\UsuarioRegistroDTO.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CamposInvalidosException.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CorreoRegistradoException.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\ErrorController.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\MensajeError.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\PropRegistradaException.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendadores.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendatarios.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Propiedades.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Usuario.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorArrendador.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorCalificacion.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorGeneral.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorRegistro.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\RedirigirAlInicio.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendadores.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendatarios.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioCalificaciones.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioPropiedades.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioCalificacion.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioPropiedad.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioRegistro.java
+c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\TestApplication.java
