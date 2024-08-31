@@ -6,8 +6,6 @@ import lombok.Setter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import com.example.ProyectoWeb.entrega1.dto.PropiedadDTO;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

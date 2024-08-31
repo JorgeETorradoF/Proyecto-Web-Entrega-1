@@ -23,21 +23,29 @@ public class ServicioLogin {
     @Autowired
     private RepositorioArrendatarios repositorioArrendatarios;
 
+    //validamos que la contraseña 
     public boolean contraseñaValida(String contraseña)
     {
-        //luego validamos lo de contraseña segura con x digitos y mezclando simbolos y tal
+        //por ahora solo se valida que no esté vacía, luego agregamos verificaciones de contraseña fuerte y todo eso
         return !contraseña.isEmpty();
     }
+
     //validamos correo con regex
     public boolean emailValido(String email)
     {
-        String EMAIL_PATTERN = 
-        "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
-        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        //si el email es vacío retorno de una vez
         if (email == null || email.isEmpty()) {
             return false;
         }
+        //regex para evaluar el email
+        String EMAIL_PATTERN = 
+        "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+
+        //se evalúa el email luego de haber compilado la regex
         Matcher matcher = pattern.matcher(email);
+
+        //retorno resultado
         return matcher.matches();
     }
 

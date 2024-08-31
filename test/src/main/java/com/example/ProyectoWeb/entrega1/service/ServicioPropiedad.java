@@ -21,6 +21,7 @@ public class ServicioPropiedad {
     @Autowired
     private RepositorioPropiedades repositorioPropiedades;
 
+    //Aquí se comprueba que no haya campos vacíos
     public boolean checkCamposPropiedad(PropiedadDTO prop) 
     {
         if (prop == null) {
@@ -42,10 +43,11 @@ public class ServicioPropiedad {
         return true;
     }
     
-
+    //guarda una propiedad
     public Propiedades savePropiedad(PropiedadDTO propiedadDTO) throws PropRegistradaException, CamposInvalidosException 
     {
         
+        //verificamos que no haya vacíos
         if(checkCamposPropiedad(propiedadDTO))
         {
             // Verifica si la propiedad ya está registrada
@@ -67,15 +69,18 @@ public class ServicioPropiedad {
         }
     }
     
-    
+    //regresa un iterable que se puede inyectar al html
     public Iterable<Propiedades> getPropiedades(int id){
         return repositorioPropiedades.getAllById(id);
     }
 
-    
+    //función de modificación de propiedad
     public Propiedades modifyPropiedad(PropiedadDTO propiedadDTO, int propId) throws PropNoEncontradaException, CamposInvalidosException{
+        
+        //verificamos que no haya vacíos
         if(checkCamposPropiedad(propiedadDTO))
         {
+            //verificamos que la propiedad a modificar efectivamente le pertenezca al arrendador solo por agregar un poco de seguridad (en el 3er corte veremos seguridad así que no nos vamos a complicar mucho por ahora)
             boolean lePertenece = repositorioPropiedades.propiedadPertenece(propiedadDTO.getIdArrendador(), propId);
             if(lePertenece)
             {
@@ -86,11 +91,13 @@ public class ServicioPropiedad {
             }
             else
             {   
+                //mensaje de que la propiedad no le pertenece
                 throw new PropNoEncontradaException("No se encuentra la propiedad del usuario solicitada");
             }
         }
         else
         {
+            //mensaje de que ingresó vacíos
             throw new CamposInvalidosException("No se admiten campos vacíos, intente de nuevo");
         }
     }

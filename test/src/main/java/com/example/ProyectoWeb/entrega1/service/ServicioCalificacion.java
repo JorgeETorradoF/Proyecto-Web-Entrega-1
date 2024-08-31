@@ -18,7 +18,7 @@ public class ServicioCalificacion {
     private RepositorioArrendatarios repositorioArrendatarios;
 
     @Transactional
-    public void calificarArrendador(Integer id, Double nuevaCalificacion) {
+    public Arrendadores calificarArrendador(Integer id, Double nuevaCalificacion) {
     Arrendadores arrendador = repositorioArrendadores.findById(id)
         .orElseThrow(() -> new RuntimeException("Arrendador no encontrado"));
 
@@ -30,13 +30,13 @@ public class ServicioCalificacion {
     arrendador.setPromedio(nuevoPromedio);
     arrendador.setCantiCalif(cantidadCalificaciones + 1);
 
-    repositorioArrendadores.save(arrendador);
+    return repositorioArrendadores.save(arrendador);
 }
 
 
 
     @Transactional
-    public void calificarArrendatario(Integer id, Float nuevaCalificacion) {
+    public Arrendatarios calificarArrendatario(Integer id, Float nuevaCalificacion) {
         Arrendatarios arrendatario = repositorioArrendatarios.findById(id)
             .orElseThrow(() -> new RuntimeException("Arrendatario no encontrado"));
 
@@ -47,7 +47,7 @@ public class ServicioCalificacion {
         arrendatario.setPromedio(nuevoPromedio);
         arrendatario.setCantiCalif(cantidadCalificaciones + 1);
 
-        repositorioArrendatarios.save(arrendatario);
+        return repositorioArrendatarios.save(arrendatario);
     }
 
 }

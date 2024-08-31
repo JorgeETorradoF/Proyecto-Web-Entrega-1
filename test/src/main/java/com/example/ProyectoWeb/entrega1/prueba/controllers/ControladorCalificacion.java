@@ -6,20 +6,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/calificaciones")
+@RequestMapping("/calificaciones")
 public class ControladorCalificacion {
 
     @Autowired
     private ServicioCalificacion servicioCalificacion;
 
     @PostMapping("/arrendador/{id}")
-    public ResponseEntity<String> calificarArrendador(
+    public ResponseEntity<?> calificarArrendador(
         @PathVariable Integer id,
         @RequestParam Double calificacion) {
     
     try {
-        servicioCalificacion.calificarArrendador(id, calificacion); 
-        return ResponseEntity.ok("Calificación del arrendador actualizada exitosamente");
+        return ResponseEntity.ok(servicioCalificacion.calificarArrendador(id, calificacion));
     } catch (RuntimeException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
@@ -27,13 +26,12 @@ public class ControladorCalificacion {
 
 
     @PostMapping("/arrendatario/{id}")
-    public ResponseEntity<String> calificarArrendatario(
+    public ResponseEntity<?> calificarArrendatario(
             @PathVariable Integer id,
             @RequestParam Float calificacion) {  
         
         try {
-            servicioCalificacion.calificarArrendatario(id, calificacion);
-            return ResponseEntity.ok("Calificación del arrendatario actualizada exitosamente");
+            return ResponseEntity.ok(servicioCalificacion.calificarArrendatario(id, calificacion));
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
