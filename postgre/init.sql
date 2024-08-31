@@ -20,11 +20,20 @@ CREATE TABLE public.arrendatarios (
 
 CREATE TABLE public.propiedades (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    id_arrendatario INTEGER REFERENCES public.arrendatarios(id),
-    nombrePropiedad VARCHAR(100),
-    promedio NUMERIC(10,2),
-    canti_calif INTEGER
+    id_arrendador INTEGER REFERENCES public.arrendadores(id),
+    nombre_propiedad VARCHAR(100) NOT NULL,
+    departamento VARCHAR(100) NOT NULL,
+    municipio VARCHAR(100) NOT NULL,
+    tipo_ingreso VARCHAR(50) NOT NULL, 
+    descripcion TEXT NOT NULL,
+    cantidad_habitaciones INTEGER NOT NULL,
+    cantidad_baños INTEGER NOT NULL,
+    permite_mascotas BOOLEAN NOT NULL,
+    tiene_piscina BOOLEAN NOT NULL,
+    tiene_asador BOOLEAN NOT NULL,
+    valor_noche NUMERIC(10,2)
 );
+
 CREATE TABLE public.contratos (
     id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     id_propiedad INTEGER REFERENCES public.propiedades(id),

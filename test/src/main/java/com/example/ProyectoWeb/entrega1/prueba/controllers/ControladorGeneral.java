@@ -4,23 +4,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ControladorInicio {
+public class ControladorGeneral {
 
-    // Mapping for the root or home page
+    // Mapping del root
     @GetMapping("/inicio")
     public String inicio() {
-        return "inicio"; // This returns the inicio.html template
+        return "inicio"; 
     }
 
-    // Mapping for the registration page
+    // Mapping del registro
     @GetMapping("/registro")
     public String registro() {
-        return "registro"; // This returns the registro.html template
+        return "registro"; 
     }
 
-    // Mapping for the login page
+    // Mapping del login
     @GetMapping("/iniciar-sesion")
     public String iniciarSesion() {
-        return "iniciar-sesion"; // This returns the iniciar-sesion.html template
+        return "iniciar-sesion";
     }
 }

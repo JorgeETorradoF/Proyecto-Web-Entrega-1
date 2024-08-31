@@ -9,9 +9,9 @@
 <body>
     <div class="container">
         <h1>Iniciar Sesión</h1>
-        <form action="#" method="post">
+        <form id="loginForm" method="get" action="/iniciar-sesion">
             <div class="form-group">
-                <label for="email">Nombre de usuario</label>
+                <label for="email">Correo</label>
                 <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
@@ -24,5 +24,6 @@
         </form>
         <p>¿No tienes una cuenta? <a th:href="@{/registro}">Regístrate aquí</a></p>
     </div>
+    <script th:src="@{/js/iniciarSesion.js}"></script>
 </body>
 </html>
