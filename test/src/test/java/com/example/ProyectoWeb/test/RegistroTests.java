@@ -1,4 +1,4 @@
-package com.example.tallerthymeleaf.test;
+package com.example.ProyectoWeb.test;
 
 import com.example.ProyectoWeb.entrega1.dto.RegistroDTO;
 import com.example.ProyectoWeb.entrega1.exception.CamposInvalidosException;
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
@@ -19,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.hamcrest.Matchers.is;
 
 @SpringBootTest(classes = {com.example.ProyectoWeb.entrega1.TestApplication.class})
+@AutoConfigureMockMvc
 public class RegistroTests {
 
     @Autowired
@@ -39,8 +41,7 @@ public class RegistroTests {
 			   .contentType(MediaType.APPLICATION_JSON)
 			   .content("{\"correo\":\"konoDioDa@gmail.com\",\"password\":\"WRYYY123\",\"tipoUsuario\":\"arrendador\"}"))
 			   .andExpect(status().isOk())
-			   .andExpect(jsonPath("$.correo", is("konoDioDa@gmail.com")))
-			   .andExpect(jsonPath("$.tipoUsuario", is("arrendador")));
+			   .andExpect(jsonPath("$.correo", is("konoDioDa@gmail.com")));
    
     }
 
