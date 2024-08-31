@@ -1,7 +1,6 @@
 package com.example.ProyectoWeb.entrega1.service;
 
 import com.example.ProyectoWeb.entrega1.dto.RegistroDTO;
-import com.example.ProyectoWeb.entrega1.dto.UsuarioRegistroDTO;
 import com.example.ProyectoWeb.entrega1.exception.CamposInvalidosException;
 import com.example.ProyectoWeb.entrega1.exception.CorreoRegistradoException;
 import com.example.ProyectoWeb.entrega1.model.Arrendadores;
@@ -13,7 +12,6 @@ import com.example.ProyectoWeb.entrega1.repository.RepositorioArrendatarios;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,9 +23,6 @@ public class ServicioRegistro {
 
     @Autowired
     private RepositorioArrendatarios repositorioArrendatarios;
-
-    @Autowired
-    private ModelMapper modelMapper;
 
     // Validamos que no estén vacíos los nombres y apellidos
     public boolean nombresApellidosValidos(String nombre, String apellido) {
