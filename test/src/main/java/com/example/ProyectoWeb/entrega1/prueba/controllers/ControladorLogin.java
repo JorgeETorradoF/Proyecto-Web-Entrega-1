@@ -34,7 +34,8 @@ public class ControladorLogin {
             } else if (!login.isArrendador()) {
                 ruta = "/arrendatario/" + login.getId();
             }
-            return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(ruta)).build();
+            return ResponseEntity.ok(ruta);
+            //return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(ruta)).build();
 
 
         } catch (CorreoNoExistenteException e) {
