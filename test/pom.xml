@@ -14,8 +14,15 @@
     <name>test</name>
     <description>Demo project for Spring Boot</description>
     <properties>
+        <!-- SonarQube Configuration -->
+        <sonar.host.url>https://sonarjaveriana.dynaco.co/</sonar.host.url>
+        <sonar.token>sqp_e1d4b922152addc955c49db3130b7df50fceeeae</sonar.token>
+        <sonar.projectKey>Grupo-1-1</sonar.projectKey>
+        <sonar.projectName>Grupo 1-1</sonar.projectName>
+        <sonar.projectVersion>1.0</sonar.projectVersion>
         <java.version>17</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -65,6 +72,12 @@
                 <mainClass>com.example.ProyectoWeb.entrega1.TestApplication</mainClass>
             </configuration>
             </plugin>
+
+            <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.7.0.1746</version>
+        </plugin>
         </plugins>
     </build>
 </project>

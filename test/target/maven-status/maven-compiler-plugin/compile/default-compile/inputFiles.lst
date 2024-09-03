@@ -1,26 +1,33 @@
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\config\ModelMapperConfig.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\PropiedadDTO.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\RegistroDTO.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\UsuarioRegistroDTO.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CamposInvalidosException.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CorreoRegistradoException.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\ErrorController.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\MensajeError.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\PropRegistradaException.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendadores.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendatarios.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Propiedades.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Usuario.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorArrendador.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorCalificacion.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorGeneral.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorRegistro.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\RedirigirAlInicio.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendadores.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendatarios.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioCalificaciones.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioPropiedades.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioCalificacion.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioPropiedad.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioRegistro.java
-c:\Users\Erick\OneDrive\Escritorio\ProyectoWeb\Proyecto-Web-Entrega-1\test\src\main\java\com\example\ProyectoWeb\entrega1\TestApplication.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\config\ModelMapperConfig.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\LoginDTO.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\PropiedadDTO.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\RegistroDTO.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\RespuestaLoginDTO.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\dto\UsuarioRegistroDTO.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CamposInvalidosException.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CorreoNoExistenteException.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\CorreoRegistradoException.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\ErrorController.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\MensajeError.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\PropNoEncontradaException.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\exception\PropRegistradaException.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendadores.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Arrendatarios.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Propiedades.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\model\Usuario.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorArrendador.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorArrendatario.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorCalificacion.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorGeneral.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorLogin.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\ControladorRegistro.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\prueba\controllers\RedirigirAlInicio.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendadores.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioArrendatarios.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioCalificacion.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\repository\RepositorioPropiedades.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioCalificacion.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioLogin.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioPropiedad.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\service\ServicioRegistro.java
+C:\Users\Jorge\Documents\desarrollo web\Proyecto Entrega 1\test\src\main\java\com\example\ProyectoWeb\entrega1\TestApplication.java
