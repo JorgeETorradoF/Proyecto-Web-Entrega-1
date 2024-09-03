@@ -1,4 +1,4 @@
-package com.example.tallerthymeleaf.test;
+package com.example.ProyectoWeb.test;
 
 import com.example.ProyectoWeb.entrega1.dto.LoginDTO;
 import com.example.ProyectoWeb.entrega1.dto.RegistroDTO;
@@ -16,16 +16,15 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.hamcrest.Matchers.is;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(classes = {com.example.ProyectoWeb.entrega1.TestApplication.class})
-public class LoginTests {
+public class TestLogin {
     @Autowired
     private MockMvc mockMvc;
 
@@ -42,9 +41,8 @@ public class LoginTests {
                .thenReturn(respuesta);
             
         mockMvc.perform(get("/iniciar-sesion/ja.vasquez@gmail.com/1234"))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.TEXT_HTML));
-        
+                .andExpect(status().isFound())  // Verifica que el status sea 302 (Found)
+                .andExpect(header().string("Location", "/arrendador/1"));  // Verifica la URL de redirección
     }
 
     @Test
