@@ -54,12 +54,16 @@ public class ServicioLogin {
             //dependiendo de si hay correo registrado o no y que tipo de usuario será se realiza el registro
             if (existeCorreoArrendador) {
                 Arrendadores arrendador = repositorioArrendadores.findByCorreo(loginDTO.getCorreo());
-                respuesta.setId(arrendador.getId());
-                respuesta.setArrendador(true);
+                if (arrendador.getContraseña().equals(loginDTO.getContraseña())){
+                    respuesta.setId(arrendador.getId());
+                    respuesta.setArrendador(true);
+                }  
             } else if(existeCorreoArrendatario) {
                 Arrendatarios arrendatario = repositorioArrendatarios.findByCorreo(loginDTO.getCorreo());
-                respuesta.setId(arrendatario.getId());
-                respuesta.setArrendador(false);
+                if (arrendatario.getContraseña().equals(loginDTO.getContraseña())){
+                    respuesta.setId(arrendatario.getId());
+                    respuesta.setArrendador(false);
+                }
             }
             else {
                 //mensaje de error correo no existente
