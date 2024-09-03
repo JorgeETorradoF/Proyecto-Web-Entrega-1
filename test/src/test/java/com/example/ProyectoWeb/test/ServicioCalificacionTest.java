@@ -1,4 +1,4 @@
-package com.example.tallerthymeleaf.test;
+package com.example.ProyectoWeb.test;
 
 import com.example.ProyectoWeb.entrega1.model.Arrendadores;
 import com.example.ProyectoWeb.entrega1.model.Arrendatarios;
