@@ -15,6 +15,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -23,7 +25,7 @@ import static org.mockito.Mockito.*;
 import java.util.Collections;
 
 
-public class ControladorArrendadorTest {
+class ControladorArrendadorTest {
 
     @Mock
     private ServicioPropiedad servicioPropiedad;
@@ -162,4 +164,84 @@ public class ControladorArrendadorTest {
         assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertEquals("Error al modificar la propiedad: Error", response.getBody());
     }
+
+    @Test
+    void testMostrarPanelArrendador() {
+        int id = 1;
+        
+        // Call the method
+        String viewName = controladorArrendador.mostrarPanelArrendador(id, model);
+        
+        // Verify the view name
+        assertEquals("pantallaArrendador", viewName);
+        
+        // Verify that the model was updated
+        verify(model).addAttribute("id", id);
+    }
+
+    @Test
+    void testMostrarFormularioCrearPropiedad() {
+        int id = 1;
+        
+        // Call the method
+        String viewName = controladorArrendador.mostrarFormularioCrearPropiedad(id, model);
+        
+        // Verify the view name
+        assertEquals("crear-propiedad", viewName);
+        
+        // Verify that the model was updated
+        verify(model).addAttribute("id", id);
+    }
+
+    @Test
+    void testMostrarDetallePropiedad() {
+        int id = 1;
+        int propiedadId = 10;
+        
+        // Call the method
+        String viewName = controladorArrendador.mostrarDetallePropiedad(id, propiedadId, model);
+        
+        // Verify the view name
+        assertEquals("detalle-propiedad", viewName);
+        
+        // Verify that the model was updated
+        verify(model).addAttribute("id", id);
+        verify(model).addAttribute("propiedadId", propiedadId);
+    }
+
+    @Test
+    void testSolicitarArriendoConFechaInvalida() {
+        int id = 1;
+        int propiedadId = 10;
+        LocalDate fechaInicio = LocalDate.now().minusDays(1);
+        LocalDate fechaFin = LocalDate.now().plusDays(1);
+        int cantidadPersonas = 4;
+        
+        // Call the method
+        String viewName = controladorArrendador.solicitarArriendo(id, propiedadId, fechaInicio, fechaFin, cantidadPersonas, model);
+        
+        // Verify that the model was updated with an error message
+        verify(model).addAttribute("error", "La fecha inicial no puede ser anterior a la fecha actual.");
+        
+        // Verify the view name
+        assertEquals("detalle-propiedad", viewName);
+    }
+
+    @Test
+    void testSolicitarArriendoConFechasValidas() {
+        int id = 1;
+        int propiedadId = 10;
+        LocalDate fechaInicio = LocalDate.now().plusDays(1);
+        LocalDate fechaFin = LocalDate.now().plusDays(5);
+        int cantidadPersonas = 4;
+        
+        // Call the method
+        String viewName = controladorArrendador.solicitarArriendo(id, propiedadId, fechaInicio, fechaFin, cantidadPersonas, model);
+        
+        // Verify the redirect URL
+        assertEquals("redirect:/arrendatario/" + id + "/solicitudes", viewName);
+    }
+
+
+
 }

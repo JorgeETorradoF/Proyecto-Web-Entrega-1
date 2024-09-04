@@ -23,29 +23,21 @@ public class ServicioLogin {
     @Autowired
     private RepositorioArrendatarios repositorioArrendatarios;
 
-    //validamos que la contraseña 
     public boolean contraseñaValida(String contraseña)
     {
-        //por ahora solo se valida que no esté vacía, luego agregamos verificaciones de contraseña fuerte y todo eso
+        //luego validamos lo de contraseña segura con x digitos y mezclando simbolos y tal
         return !contraseña.isEmpty();
     }
-
     //validamos correo con regex
     public boolean emailValido(String email)
     {
-        //si el email es vacío retorno de una vez
-        if (email == null || email.isEmpty()) {
-            return false;
-        }
-        //regex para evaluar el email
         String EMAIL_PATTERN = 
         "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
-
-        //se evalúa el email luego de haber compilado la regex
+        if (email == null || email.isEmpty()) {
+            return false;
+        }
         Matcher matcher = pattern.matcher(email);
-
-        //retorno resultado
         return matcher.matches();
     }
 
@@ -62,12 +54,16 @@ public class ServicioLogin {
             //dependiendo de si hay correo registrado o no y que tipo de usuario será se realiza el registro
             if (existeCorreoArrendador) {
                 Arrendadores arrendador = repositorioArrendadores.findByCorreo(loginDTO.getCorreo());
-                respuesta.setId(arrendador.getId());
-                respuesta.setArrendador(true);
+                if (arrendador.getContraseña().equals(loginDTO.getContraseña())){
+                    respuesta.setId(arrendador.getId());
+                    respuesta.setArrendador(true);
+                }  
             } else if(existeCorreoArrendatario) {
                 Arrendatarios arrendatario = repositorioArrendatarios.findByCorreo(loginDTO.getCorreo());
-                respuesta.setId(arrendatario.getId());
-                respuesta.setArrendador(false);
+                if (arrendatario.getContraseña().equals(loginDTO.getContraseña())){
+                    respuesta.setId(arrendatario.getId());
+                    respuesta.setArrendador(false);
+                }
             }
             else {
                 //mensaje de error correo no existente

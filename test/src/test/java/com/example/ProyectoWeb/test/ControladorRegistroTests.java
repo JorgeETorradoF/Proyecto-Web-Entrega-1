@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.is;
 
 @SpringBootTest(classes = {com.example.ProyectoWeb.entrega1.TestApplication.class})
 @AutoConfigureMockMvc
-public class RegistroTests {
+class ControladorRegistroTests {
 
     @Autowired
     private MockMvc mockMvc;
@@ -31,7 +31,7 @@ public class RegistroTests {
 
     @Test
 	@Order(1)
-    public void testRegistrarUsuarioExitoso() throws Exception {
+     void testRegistrarUsuarioArrendadorExitoso() throws Exception {
 
 		Usuario Dio = new Usuario(1,"Dio","Brando","WRYYY123","konoDioDa@gmail.com",(float)0,0);
         Mockito.when(servicioRegistro.registerUser(Mockito.any(RegistroDTO.class)))
@@ -46,7 +46,7 @@ public class RegistroTests {
     }
 
     @Test
-    public void testRegistrarUsuarioCorreoRegistrado() throws Exception {
+     void testRegistrarUsuarioCorreoRegistrado() throws Exception {
         Mockito.when(servicioRegistro.registerUser(Mockito.any(RegistroDTO.class)))
                .thenThrow(new CorreoRegistradoException("El correo ya está registrado"));
 
@@ -58,7 +58,7 @@ public class RegistroTests {
     }
 
     @Test
-    public void testRegistrarUsuarioCamposInvalidos() throws Exception {
+     void testRegistrarUsuarioCamposInvalidos() throws Exception {
         Mockito.when(servicioRegistro.registerUser(Mockito.any(RegistroDTO.class)))
                .thenThrow(new CamposInvalidosException("Campos inválidos"));
 

@@ -16,22 +16,18 @@ import jakarta.persistence.Id;
 @AllArgsConstructor
 @Setter
 @Getter
-public class Propiedades {
+public class Propiedades extends PropiedadTemplate{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int idArrendador;
-    private String nombrePropiedad;
-    private String departamento;
-    private String municipio;
-    private String tipoIngreso;
-    private String descripcion;
-    private int cantidadHabitaciones;
-    private int cantidadBaños;
-    private boolean permiteMascotas;
-    private boolean tienePiscina;
-    private boolean tieneAsador;
-    private float valorNoche;
+    public Propiedades(int id,int idArrendador, String nombrePropiedad, String departamento, String municipio, 
+                       String tipoIngreso, String descripcion, int cantidadHabitaciones, int cantidadBaños, 
+                       boolean permiteMascotas, boolean tienePiscina, boolean tieneAsador, float valorNoche) 
+    {
+        super(idArrendador, nombrePropiedad, departamento, municipio, tipoIngreso, descripcion, 
+              cantidadHabitaciones, cantidadBaños, permiteMascotas, tienePiscina, tieneAsador, valorNoche);
+        this.id = id;      
+    }
 }

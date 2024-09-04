@@ -10,7 +10,6 @@ import com.example.ProyectoWeb.entrega1.exception.CorreoNoExistenteException;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.net.URI;
 
 @RestController
 @RequestMapping("/iniciar-sesion")
@@ -34,7 +33,7 @@ public class ControladorLogin {
             } else if (!login.isArrendador()) {
                 ruta = "/arrendatario/" + login.getId();
             }
-            return ResponseEntity.status(HttpStatus.FOUND).location(URI.create(ruta)).build();
+            return ResponseEntity.ok(ruta);
 
 
         } catch (CorreoNoExistenteException e) {
