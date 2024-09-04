@@ -2,15 +2,15 @@ package com.example.ProyectoWeb.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import com.example.ProyectoWeb.entrega1.prueba.controllers.ControladorGeneral;
-
-@WebMvcTest(ControladorGeneral.class)
-public class ControladorGeneralTest {
+@SpringBootTest(classes = {com.example.ProyectoWeb.entrega1.TestApplication.class})
+@AutoConfigureMockMvc 
+class ControladorGeneralTest {
 
     @Autowired
     private MockMvc mockMvc;

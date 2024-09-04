@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,7 +40,7 @@ class ControladorCalificacionTest {
 
         ResponseEntity<?> response = controladorCalificacion.calificarArrendador(id, calificacion);
 
-        assertEquals(200, response.getStatusCode());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(arrendador, response.getBody()); // Compara con el objeto esperado
     }
 
@@ -51,7 +52,7 @@ class ControladorCalificacionTest {
 
         ResponseEntity<?> response = controladorCalificacion.calificarArrendador(id, calificacion);
 
-        assertEquals(400, response.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertEquals("Error al calificar", response.getBody()); // Esto puede necesitar ajuste si el manejo de errores cambia
     }
 
@@ -64,7 +65,7 @@ class ControladorCalificacionTest {
 
         ResponseEntity<?> response = controladorCalificacion.calificarArrendatario(id, calificacion);
 
-        assertEquals(200, response.getStatusCode());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(arrendatario, response.getBody()); // Compara con el objeto esperado
     }
 
@@ -76,7 +77,7 @@ class ControladorCalificacionTest {
 
         ResponseEntity<?> response = controladorCalificacion.calificarArrendatario(id, calificacion);
 
-        assertEquals(400, response.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         assertEquals("Error al calificar", response.getBody()); // Esto puede necesitar ajuste si el manejo de errores cambia
     }
 }
