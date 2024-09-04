@@ -16,21 +16,21 @@ class ControladorGeneralTest {
     private MockMvc mockMvc;
 
     @Test
-    public void testInicio() throws Exception {
+    void testInicio() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/inicio"))
                .andExpect(MockMvcResultMatchers.status().isOk())
                .andExpect(MockMvcResultMatchers.view().name("inicio"));
     }
 
     @Test
-    public void testRegistro() throws Exception {
+    void testRegistro() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/registro"))
                .andExpect(MockMvcResultMatchers.status().isOk())
                .andExpect(MockMvcResultMatchers.view().name("registro"));
     }
 
     @Test
-    public void testIniciarSesion() throws Exception {
+    void testIniciarSesion() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.get("/iniciar-sesion"))
                .andExpect(MockMvcResultMatchers.status().isOk())
                .andExpect(MockMvcResultMatchers.view().name("iniciar-sesion"));
