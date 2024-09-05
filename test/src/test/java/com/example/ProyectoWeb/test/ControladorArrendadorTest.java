@@ -14,9 +14,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-
-import java.time.LocalDate;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -192,56 +189,30 @@ class ControladorArrendadorTest {
         // Verify that the model was updated
         verify(model).addAttribute("id", id);
     }
-
     @Test
-    void testMostrarDetallePropiedad() {
+    void testMostrarDetallePropiedad() throws PropNoEncontradaException {
         int id = 1;
-        int propiedadId = 10;
-        
-        // Call the method
-        String viewName = controladorArrendador.mostrarDetallePropiedad(id, propiedadId, model);
-        
-        // Verify the view name
-        assertEquals("detalle-propiedad", viewName);
-        
-        // Verify that the model was updated
-        verify(model).addAttribute("id", id);
-        verify(model).addAttribute("propiedadId", propiedadId);
+        int propiedadId = 1;
+
+        when(servicioPropiedad.getPropiedad(eq(propiedadId), eq(id))).thenReturn(propRet);
+
+        ResponseEntity<?> response = controladorArrendador.mostrarDetallePropiedad(id, propiedadId, model);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(propRet, response.getBody());
     }
 
     @Test
-    void testSolicitarArriendoConFechaInvalida() {
+    void testMostrarDetallePropiedadException() throws PropNoEncontradaException {
         int id = 1;
-        int propiedadId = 10;
-        LocalDate fechaInicio = LocalDate.now().minusDays(1);
-        LocalDate fechaFin = LocalDate.now().plusDays(1);
-        int cantidadPersonas = 4;
-        
-        // Call the method
-        String viewName = controladorArrendador.solicitarArriendo(id, propiedadId, fechaInicio, fechaFin, cantidadPersonas, model);
-        
-        // Verify that the model was updated with an error message
-        verify(model).addAttribute("error", "La fecha inicial no puede ser anterior a la fecha actual.");
-        
-        // Verify the view name
-        assertEquals("detalle-propiedad", viewName);
+        int propiedadId = 100;
+
+        when(servicioPropiedad.getPropiedad(eq(propiedadId), eq(id))).thenThrow(new PropNoEncontradaException("No encontrada"));
+
+        ResponseEntity<?> response = controladorArrendador.mostrarDetallePropiedad(id, propiedadId, model);
+
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        assertEquals("Error al obtener la propiedad: No encontrada", response.getBody());
     }
-
-    @Test
-    void testSolicitarArriendoConFechasValidas() {
-        int id = 1;
-        int propiedadId = 10;
-        LocalDate fechaInicio = LocalDate.now().plusDays(1);
-        LocalDate fechaFin = LocalDate.now().plusDays(5);
-        int cantidadPersonas = 4;
-        
-        // Call the method
-        String viewName = controladorArrendador.solicitarArriendo(id, propiedadId, fechaInicio, fechaFin, cantidadPersonas, model);
-        
-        // Verify the redirect URL
-        assertEquals("redirect:/arrendatario/" + id + "/solicitudes", viewName);
-    }
-
-
 
 }

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.ProyectoWeb.entrega1.dto.PropiedadDTO;
+import com.example.ProyectoWeb.entrega1.exception.PropNoEncontradaException;
 import com.example.ProyectoWeb.entrega1.model.Propiedades;
 import com.example.ProyectoWeb.entrega1.service.ServicioPropiedad;
 
@@ -26,8 +27,6 @@ import java.time.LocalDate;
 public class ControladorArrendador {
 
     private static final String ERROR_MSG = "error";
-    
-    private static final String DETALLE_PROP_HTML = "detalle-propiedad";
 
     private final ServicioPropiedad servicioPropiedad;
 
@@ -62,7 +61,6 @@ public class ControladorArrendador {
     }
 
     @GetMapping("/propiedades")
-    @ResponseBody
     public String getAllProperties(@PathVariable("id") int id, Model model) {
         try {
             // Fetch the properties
@@ -95,33 +93,15 @@ public class ControladorArrendador {
     }
 
     @GetMapping("/propiedad/{propiedadId}")
-    public String mostrarDetallePropiedad(@PathVariable("id") int id, @PathVariable("propiedadId") int propiedadId, Model model) {
-        // Cargar los detalles de la propiedad usando el ID y pasar al modelo
-        // Puedes agregar lógica para obtener la propiedad con propiedadId y validaciones según el negocio
-        model.addAttribute("id", id);
-        model.addAttribute("propiedadId", propiedadId);
-        return DETALLE_PROP_HTML;
-    }
-
-    @PostMapping("/propiedad/{propiedadId}/solicitar-arriendo")
-    public String solicitarArriendo(@PathVariable("id") int id,
-                                    @PathVariable("propiedadId") int propiedadId,
-                                    @RequestParam("fechaInicio") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaInicio,
-                                    @RequestParam("fechaFin") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fechaFin,
-                                    @RequestParam("cantidadPersonas") int cantidadPersonas,
-                                    Model model) {
-        if (fechaInicio.isBefore(LocalDate.now())) {
-            model.addAttribute(ERROR_MSG, "La fecha inicial no puede ser anterior a la fecha actual.");
-            return DETALLE_PROP_HTML;
+    public ResponseEntity<?> mostrarDetallePropiedad(@PathVariable("id") int id, @PathVariable("propiedadId") int propiedadId, Model model) {
+        try{
+            return ResponseEntity.ok(servicioPropiedad.getPropiedad(propiedadId,id));
         }
-        if (fechaFin.isBefore(fechaInicio.plusDays(1))) {
-            model.addAttribute(ERROR_MSG, "La fecha final debe ser al menos un día posterior a la fecha inicial.");
-            return DETALLE_PROP_HTML;
+        catch(PropNoEncontradaException e)
+        {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al obtener la propiedad: " + e.getMessage());
         }
-
-        return "redirect:/arrendatario/" + id + "/solicitudes";
-    }
-    
+    }    
 
 }
 

@@ -17,7 +17,13 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
+
+import java.util.Arrays;
 
 @ExtendWith(MockitoExtension.class)
 class ServicioPropiedadTest {
@@ -122,4 +128,17 @@ class ServicioPropiedadTest {
             servicioPropiedad.modifyPropiedad(propiedadDTO, 1);
         });
     }
+    @Test
+    void testGetPropiedades() {
+        // Datos de prueba
+        Propiedades propiedad1 = new Propiedades();
+        Propiedades propiedad2 = new Propiedades();
+        when(repositorioPropiedades.getAllById(anyInt())).thenReturn(Arrays.asList(propiedad1, propiedad2));
+
+        Iterable<Propiedades> propiedades = servicioPropiedad.getPropiedades(1);
+        assertNotNull(propiedades);
+        assertTrue(propiedades.iterator().hasNext());
+        verify(repositorioPropiedades, times(1)).getAllById(anyInt());
+    }
+
 }

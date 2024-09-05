@@ -7,10 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ControladorArrendatario {
 
     // Mapping for the root or home page
-    @GetMapping("/arrendatario/{$id}")
+    @GetMapping("/arrendatario/{id}")
     public String inicio() {
         return "inicio"; // This returns the inicio.html template
     }
-
-  
 }

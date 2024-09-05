@@ -1,5 +1,7 @@
 package com.example.ProyectoWeb.entrega1.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -17,4 +19,7 @@ public interface RepositorioPropiedades extends CrudRepository<Propiedades, Inte
 
     @Query("SELECT CASE WHEN COUNT(p) > 0 THEN true ELSE false END FROM Propiedades p WHERE p.id = :idPropiedad AND p.idArrendador = :idUsuario")
     boolean propiedadPertenece(@Param("idUsuario") int idUsuario,@Param("idPropiedad") int idPropiedad);
+
+    @Query("SELECT p FROM Propiedades p WHERE p.id = :id")
+    Optional<Propiedades> findById(@Param("id") int id);
 }

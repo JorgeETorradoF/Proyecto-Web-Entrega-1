@@ -2,6 +2,8 @@ package com.example.ProyectoWeb.entrega1.service;
 
 
 
+import java.util.Optional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ public class ServicioPropiedad {
     private ModelMapper modelMapper;
     @Autowired
     private RepositorioPropiedades repositorioPropiedades;
+
+    private String propNoEncontradaMsg = "No se encuentra la propiedad del usuario solicitada";
 
     //Aquí se comprueba que no haya campos vacíos
     public boolean checkCamposPropiedad(PropiedadDTO prop) 
@@ -73,6 +77,25 @@ public class ServicioPropiedad {
     public Iterable<Propiedades> getPropiedades(int id){
         return repositorioPropiedades.getAllById(id);
     }
+    //regresa una propiedad del usuario
+    public Propiedades getPropiedad(int propId, int id) throws PropNoEncontradaException{
+        if(repositorioPropiedades.propiedadPertenece(id,propId))
+        {
+            Optional<Propiedades> propRet = repositorioPropiedades.findById(id);
+            if (propRet.isPresent()) {
+                // Si se encuentra la propiedad, la retornamos
+                return propRet.get();
+            } 
+            else {
+                throw new PropNoEncontradaException(propNoEncontradaMsg);
+            }
+    
+        }
+        else
+        {
+            throw new PropNoEncontradaException(propNoEncontradaMsg);
+        }
+    }
 
     //función de modificación de propiedad
     public Propiedades modifyPropiedad(PropiedadDTO propiedadDTO, int propId) throws PropNoEncontradaException, CamposInvalidosException{
@@ -92,7 +115,7 @@ public class ServicioPropiedad {
             else
             {   
                 //mensaje de que la propiedad no le pertenece
-                throw new PropNoEncontradaException("No se encuentra la propiedad del usuario solicitada");
+                throw new PropNoEncontradaException(propNoEncontradaMsg);
             }
         }
         else
