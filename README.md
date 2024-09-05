@@ -9,7 +9,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 
 Una vez se haya desplegado y tenga una IP externa (en algunos casos será localhost como por ejemplo en docker desktop), se puede continuar:
 
-1. **Cree el namespace thymeleaf:**
+1. **Cree el namespace proyecto-web:**
     ```bash
     kubectl create namespace proyecto-web
     ```
